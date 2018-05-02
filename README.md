@@ -1,2 +1,2 @@
 **Breakout**
-*This will be my project for the 4th marking period in my engineering class. Breakout is a game that consists in rows of bricks with about 10 bricks together*
+*This will be my project for the 4th marking period in my engineering class. Breakout is a game that consists in rows of bricks with about 10 bricks together. I will try my best to make it look nice, colorful, and fun. The game's goal is to break all the bricks without letting the ball fall. The player controls the bar and guides the ball to whatever brick/bricks he/she want to break.* 
