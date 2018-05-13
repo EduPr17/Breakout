@@ -7,3 +7,4 @@ from kivy.properties import NumericProperty, ReferenceListProperty
 # As the game goes, I want that the ball speeds up so I need this import to establish the speed of the ball which will be defined later
 from kivy.uix.textinput import TextInput
 # As the player enters the game, they want to introduce their name, so I nedd this function to let them do that.
+
