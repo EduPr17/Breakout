@@ -1,0 +1,17 @@
+<Ball> 
+ size: 10, 10
+    canvas:
+        Ellipse:
+            size: 15, 15
+            #Centers the larger ellipse onto the hitbox
+            pos: (a - 2.5 for a in self.pos)
+            
+  <Brick>:
+    size: 80, 20
+    canvas:
+        Color:
+            rgb: root.color_code[root.lvl]
+        Rectangle:
+            #TODO: Figure out why self.size doesn't bind to brick size but defaults to 100
+            size: 80, 20
+            pos: self.pos
