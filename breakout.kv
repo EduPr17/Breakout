@@ -1,16 +1,12 @@
-<Ball> 
- size: 10, 10
-    canvas:
-        Ellipse:
-            size: 15, 15
-            #Centers the larger ellipse onto the hitbox
-            pos: (a - 2.5 for a in self.pos)
+<BreakoutBall>:
+ size: 15, 15
+  canvas:
+   Ellipse:
+    size: 15, 15
+    pos: (a - 2.5 for a in self.pos)
             
- <Brick>:
-   size: 80, 20
-   canvas:
-       Color:
-           rgb: root.color_code[root.lvl]
-       Rectangle:
-           size: 80, 20
-           pos: self.pos
+ <BreakoutGame>:
+  canvas:
+   Rectangle:
+    pos: self.center_x-5,0
+    size: 10, self.height
