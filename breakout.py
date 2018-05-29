@@ -2,10 +2,10 @@ import pygame
 #SCREEN SIZE
 screen_size = 650, 490
 # DEFINING THE STRUCTURES 
-brick_width = 62
-brick_height = 17
-paddle_width = 62
-paddle_height = 12
+brick_width = 65
+brick_height = 49
+paddle_width = 65
+paddle_height = 49
 ball_diameter = 16
 ball_radius = ball_diameter / 2
 # SETTING THE MAX DISTANCE THAT THE PADDLE AND THE BALL CAN GO ON THE SCREEN
@@ -51,6 +51,7 @@ class Breakout:
   def create_bricks(self):
     self.bricks = []
     for in in range (7):
+      
       
       
     
