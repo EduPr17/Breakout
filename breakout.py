@@ -30,11 +30,6 @@ class Breakout:
     
     self.screen = pygame.display.set_mode(screen_size)
     
-    if pygame.font:
-      self.font = pygame.font.Font = (None, 30)
-    else:
-      self.font = None
-      
     self.init_game()
     
   def init_game(self):
@@ -49,7 +44,12 @@ class Breakout:
     self.create_bricks()
     
   def create_bricks(self):
-    self.bricks = []
+    bricks_list = []
+    for i in range(1,8):
+      brick1 = Brick(75*i, 50)
+      bricks_list.append(brick1)
+      
+   
       
       
       
