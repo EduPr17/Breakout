@@ -13,7 +13,7 @@ MAX_PADDLE_X = SCREEN_SIZE[0] - PADDLE_WIDTH
 MAX_BALL_X = SCREEN_SIZE[0] - BALL_DIAMETER
 MAX_BALL_Y = SCREEN_SIZE[1] - BALL_DIAMETER
 #PADDLE Y COORDINATE... NOT BEING ABLE TO MOVE UP AND JUST RIGHT TO LEFT
-PADDLE_Y = SCREEN_SIZE - PADDLE_HEIGHT - 8
+PADDLE_Y = SCREEN_SIZE - PADDLE_HEIGHT - 10
 #DEFINING SOME COLORS
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
@@ -30,8 +30,6 @@ class Breakout:
     
     self.screen = pygame.display.set_mode(SCREEN_SIZE)
     
-    self.clock = pygame.time.Clock()
-    
     if pygame.font:
       self.font = pygame.font.Font = (None, 30)
     else:
@@ -39,6 +37,18 @@ class Breakout:
       
     self.init_game()
     
+  def init_game(self):
+    self.lives = 3
+    self.score = 0
+    self.state = STATE_BALL_IN_PADDLE
+    
+    self.paddle = pygame.Rect(200, PADDLE_Y, PADDLE_HEIGHT, PADDLE WIDTH)
+    self.ball = pygame.Rect(200, PADDLE_Y, BALL_DIAMETER, BALL_DIAMETER, BALL_DIAMETER)
+    
+    self.ball_vel = [5, -5]
+    self.create_bricks()
+    
+  def create_bricks(self):
     
 
 if __name__ == '__main__':
