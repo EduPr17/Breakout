@@ -49,6 +49,10 @@ class Breakout:
     self.create_bricks()
     
   def create_bricks(self):
+    self.bricks = []
+    for in in range (7):
+      
+      
     
 
   if __name__ == '__main__':
