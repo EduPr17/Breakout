@@ -51,5 +51,5 @@ class Breakout:
   def create_bricks(self):
     
 
-if __name__ == '__main__':
-  Breakout().run()
+  if __name__ == '__main__':
+    Breakout().run()
