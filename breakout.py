@@ -1,34 +1,34 @@
 import pygame
 #SCREEN SIZE
-SCREEN_SIZE = 650, 490
+screen_size = 650, 490
 # DEFINING THE STRUCTURES 
-BRICK_WIDTH = 62
-BRICK_HEIGHT = 17
-PADDLE_WIDTH = 62
-PADDLE_HEIGHT = 12
-BALL_DIAMETER = 16
-BALL_RADIUS = BALL_DIAMETER / 2
+brick_width = 62
+brick_height = 17
+paddle_width = 62
+paddle_height = 12
+ball_diameter = 16
+ball_radius = ball_diameter / 2
 # SETTING THE MAX DISTANCE THAT THE PADDLE AND THE BALL CAN GO ON THE SCREEN
-MAX_PADDLE_X = SCREEN_SIZE[0] - PADDLE_WIDTH
-MAX_BALL_X = SCREEN_SIZE[0] - BALL_DIAMETER
-MAX_BALL_Y = SCREEN_SIZE[1] - BALL_DIAMETER
+max_paddle_x = screen_size[0] - paddle_width
+max_ball_x = screen_size[0] - ball_diameter
+max_ball_y = screen_size[1] - ball_diameter
 #PADDLE Y COORDINATE... NOT BEING ABLE TO MOVE UP AND JUST RIGHT TO LEFT
-PADDLE_Y = SCREEN_SIZE[1] - PADDLE_HEIGHT - 10
+paddle_y = screen_size[1] - paddle_height - 10
 #DEFINING SOME COLORS
-BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
-PURPLE = (255, 0, 255)
-BRICK_COLOR = (0, 0, 255)
+black = (0, 0, 0)
+green = (0, 255, 0)
+purple = (255, 0, 255)
+brick_color = (0, 0, 255)
 # GAME STATES
-STATE_BALL_IN_PADDLE = 0
-STATE_PLAYING = 1
-STATE_WON = 2
-STATE_OVER = 3
+state_ball_in_paddle = 0
+state_playing = 1
+state_won = 2
+state_over = 3
 
 class Breakout:
   def __init__():
     
-    self.screen = pygame.display.set_mode(SCREEN_SIZE)
+    self.screen = pygame.display.set_mode(screen_size)
     
     if pygame.font:
       self.font = pygame.font.Font = (None, 30)
@@ -40,10 +40,10 @@ class Breakout:
   def init_game(self):
     self.lives = 3
     self.score = 0
-    self.state = STATE_BALL_IN_PADDLE
+    self.state = state_ball_in_paddle
     
-    self.paddle = pygame.Rect(200, PADDLE_Y, PADDLE_HEIGHT, PADDLE WIDTH)
-    self.ball = pygame.Rect(200, PADDLE_Y, BALL_DIAMETER, BALL_DIAMETER, BALL_DIAMETER)
+    self.paddle = pygame.Rect(200, paddle_y, paddle_height, paddle_width)
+    self.ball = pygame.Rect(200, paddle_y, ball_diameter, ball_diameter, ball_diameter)
     
     self.ball_vel = [5, -5]
     self.create_bricks()
