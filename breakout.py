@@ -30,11 +30,6 @@ ball_y = 100
 paddle_color = [0, 255, 0]
 
 
-# GAME STATES
-state_ball_in_paddle = 0
-state_playing = 1
-state_won = 2
-state_over = 3
     
    
     
@@ -50,25 +45,4 @@ state_over = 3
     for i in range(1,8):
       brick1 = Brick(75*i, 50)
       bricks_list.append(brick1)
-      # DEFINING THE STRUCTURES 
-brick_width = 64
-brick_height = 48
-paddle_width = 64
-paddle_height = 48
-ball_diameter = 20
-ball_radius = ball_diameter / 2
-ball_color = [255, 0, 255]
-paddle_color = [0, 255, 0]
-
-# GAME STATES
-state_ball_in_paddle = 0
-state_playing = 1
-state_won = 2
-state_over = 3
-
-
-   
-      
-      
-      
- 
+    
