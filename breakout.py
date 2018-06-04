@@ -1,7 +1,7 @@
 import pygame
 pygame.init()
 #SCREEN SIZE
-screen_size = 640, 480
+screen_size = 800, 600
 screen = pygame.display.set_mode(screen_size)
 
 class Breakout(pygame.sprite.Sprite):
@@ -39,6 +39,10 @@ class Ball(pygame.sprite.Sprite):
     
     self.screenwidth = pygame.display.get_surface().get_width()
     self.screenheight = pygame.display.get_surface().get_height()
+    
+    def bouncing(self, diff):
+      self.direction = (180 - self.direction) % 360
+      self.direction -= diff
 
 brick_width = 64
 brick_height = 48
