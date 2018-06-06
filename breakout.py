@@ -57,7 +57,30 @@ class Ball(pygame.sprite.Sprite):
     
 pygame.init()
 
-screen
+screen = pygame.display.set_mode([800, 600])
+
+pygame.display.set_caption('Breakout')
+
+pygame.mouse.set_visible(0)
+
+font = pygame.font.Font(None, 36)
+
+background = pygame.Surface(screen.get_size())
+
+blocks = pygame.sprite.Group()
+balls = pygame.sprite.Group()
+allsprites = pygame.sprite.Group()
+
+player = Player()
+allsprites.add(player)
+
+ball = Ball()
+allsprites.add(ball)
+balls.add(ball)
+
+top = 80
+
+blockcount = 32
 
       
       
@@ -78,13 +101,6 @@ paddle_color = [0, 255, 0]
 
     
    
-    
-    self.init_game()
-    
-  def init_game(self):
-    self.lives = 3
-    self.score = 0
-
     
 
     
