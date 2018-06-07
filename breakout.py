@@ -82,11 +82,42 @@ top = 80
 
 blockcount = 32
 
+for row in range(5):
+  for column in range (0, blockcount):
+    block = Block(green, column * block_width + 2) + 1, top)
+    blocks.add(block)
+    allsprites.add(block)
+    
+  top += block_height + 2
+
+  clock = pygame.time.Clock()
+  
+  game_over = False
+  
+  exit_program = False
+  
+  while not  exit_program:
+    
+    clock.tick(30)
+    
+    screen.fill(black)
+    
+    for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+        exit_program = True
+        
+    if not game_over:
+      player.update()
+      game_over = ball.update()
       
+    allsprites.draw(screen)
+    
+    pygame.display.flip()
+
+pygame.quit()
       
-      
-brick_width = 64
-brick_height = 48
+block_width = 64
+block_height = 48
 paddle_width = 64
 paddle_height = 48
 ball_diameter = 20
@@ -95,6 +126,7 @@ ball_color = [255, 0, 255]
 ball_x = 50
 ball_y = 100
 purple = (255, 0, 255)
+black = (0, 0, 0)
 green = (0, 255, 0)
 paddle_color = [0, 255, 0]
 
