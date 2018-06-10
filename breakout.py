@@ -121,7 +121,7 @@ background = pygame.Surface(screen.get_size())
 
 blocks = pygame.sprite.Group()
 balls = pygame.sprite.Group()
-allsprites = pyagme.sprote.Group()
+allsprites = pygame.sprite.Group()
 
 player = Player()
 allsprites.add(player)
