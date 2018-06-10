@@ -173,6 +173,6 @@ class Breakout:
       pygame.display.flip()
 
 if __name__ == "__main__":
-  Breakout().run.()
+  Breakout().run()
       
         
