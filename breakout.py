@@ -10,7 +10,7 @@ paddle_height = 43
 ball_diameter = 18
 ball_radius = ball_diameter / 2
 
-max_paddle_y = screen_size[0] - paddle_width
+max_paddle_x = screen_size[0] - paddle_width
 max_ball_x = screen_size[0] - ball_diameter
 max_ball_y = screen_size[1] - ball_diameter
 
@@ -122,7 +122,7 @@ class Breakout:
         self.ball_vel[1] = -self.ball_vel[1]
       elif self.ball.top > self.paddle.top:
         self.tries -= 1
-        if self.lives > 0:
+        if self.tries > 0:
           self.state = state_ball_in_rest
         else: 
           self.state = state_game_over
@@ -162,7 +162,7 @@ class Breakout:
       elif self.state == state_won:
         self.show_message("GREAT JOB! PRESS ENTER TO PLAY AGAIN")
         
-      self.draw_bricks()
+      self.print_bricks()
       
       pygame.draw.rect(self.screen, white, self.paddle)
       
