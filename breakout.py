@@ -1,3 +1,4 @@
+import math
 import pygame
 pygame.init()
 
@@ -9,8 +10,8 @@ class Breakout(pygame.sprite.Sprite):
     self.image.fill(purple)
     self.rect = image.get_rect()
      
-     self.rect.x = x
-     self.rect.y = y 
+    self.rect.x = x
+    self.rect.y = y 
 
 
 class Ball(pygame.sprite.Sprite):
@@ -26,7 +27,7 @@ class Ball(pygame.sprite.Sprite):
   height = 10
   
   def __init__(self):
-    super().__init__():
+    super().__init__()
       
     self.image = pygame.Surface([self.width, self.height])
     
