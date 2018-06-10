@@ -1,6 +1,18 @@
 import math
 import pygame
-pygame.init()
+block_width = 64
+block_height = 48
+paddle_width = 64
+paddle_height = 48
+ball_diameter = 20
+ball_radius = ball_diameter / 2
+ball_color = [255, 0, 255]
+ball_x = 50
+ball_y = 100
+purple = (255, 0, 255)
+black = (0, 0, 0)
+green = (0, 255, 0)
+paddle_color = [0, 255, 0]
 
 class Breakout(pygame.sprite.Sprite):
   def __init__(self, color, x, y):
@@ -27,6 +39,7 @@ class Ball(pygame.sprite.Sprite):
   height = 10
   
   def __init__(self):
+    
     super().__init__()
       
     self.image = pygame.Surface([self.width, self.height])
@@ -38,10 +51,11 @@ class Ball(pygame.sprite.Sprite):
     self.screenwidth = pygame.display.get_surface().get_width()
     self.screenheight = pygame.display.get_surface().get_height()
     
-    def bouncing(self, diff):
-      self.direction = (180 - self.direction) % 360
-      self.direction -= diff
-    
+  def bouncing(self, diff):
+    self.direction = (180 - self.direction) % 360
+    self.direction -= diff
+   
+  def update(self):
     self.rect.x = self.x
     self.rect.y = self.y
     
@@ -55,7 +69,29 @@ class Ball(pygame.sprite.Sprite):
     
     if self.x > self.screenwidth - self.width:
       self.rect.x = self.screenwidth - self.width
+
+class Player(pygame.sprite.Sprite):
+        def __init__(self):
+        super.__init__()
     
+        self.width = 75
+        self.height = 15
+        self.image = pygame.Surface([self.width, self.height])
+        self.image.fill((green))
+
+        self.rect = self.image.get_rect()
+        self.screenwidth = pygame.display.get_surface().get_width()
+        self.screenheight = pygame.display.get_surface().get_height()
+
+        self.rect.x = 0
+        self.rect.y = self.screenheight-self.height
+    def update(self):
+        pos = pygame.mouse.get_pos()
+
+        self.rect.x = pos[0]
+
+    if self.rect.x > self.screenwidth - self.width:
+        self.rect.x = self.screenwidth - self.width    
 pygame.init()
 
 screen = pygame.display.set_mode([800, 600])
@@ -137,20 +173,6 @@ for row in range(5):
 
 pygame.quit()
       
-block_width = 64
-block_height = 48
-paddle_width = 64
-paddle_height = 48
-ball_diameter = 20
-ball_radius = ball_diameter / 2
-ball_color = [255, 0, 255]
-ball_x = 50
-ball_y = 100
-purple = (255, 0, 255)
-black = (0, 0, 0)
-green = (0, 255, 0)
-paddle_color = [0, 255, 0]
-
 
     
    
