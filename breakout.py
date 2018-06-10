@@ -5,9 +5,9 @@ class Breakout(pygame.sprite.Sprite):
   def __init__(self, color, x, y):
     super().__init__()
     
-     self.image = pygame.Surface([block_width, block_height])
-     self.image.fill(purple)
-     self.rect = image.get_rect()
+    self.image = pygame.Surface([block_width, block_height])
+    self.image.fill(purple)
+    self.rect = image.get_rect()
      
      self.rect.x = x
      self.rect.y = y 
