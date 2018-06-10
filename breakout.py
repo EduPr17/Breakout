@@ -56,15 +56,15 @@ class Breakout:
     self.create_bricks()
     
   def create_bricks(self):
-        y_ofs = 35
-        self.bricks = []
-        for i in range(7):
-            x_ofs = 35
-            for j in range(8):
-        self.bricks.append(pygame.Rect(x_ofs,y_ofs,brick_width,brick_height)
+    y_ofs = 35
+    self.bricks = []
+    for i in range(7):
+      x_ofs = 35
+      for j in range(8):
+        self.bricks.append(pygame.Rect(x_ofs,y_ofs,brick_width,brick_height))
         x_ofs += brick_width + 10
-      y_ofs += brick_height + 5
-  
+      y_ofs += brick_height + 5  
+        
   def print_bricks(self):
     for brick in self.bricks:
       pygame.draw.rect(self.screen, brick_color, brick)
