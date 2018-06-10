@@ -110,6 +110,26 @@ for row in range(5):
       player.update()
       game_over = ball.update()
       
+    if game_over:
+      text = font.render("Game Over", True, green)
+      textpos = text.get_rect(centerx=background.get_width()/2)
+      textpos = 300
+      screen.blit(text, textpos)
+      
+    if pygame.sprite.spritecollide(player, balls, False):
+      diff = (player.rect.x + player.width/2) - (ball.rect.x+ball.width/2)
+      
+      ball.rect.y = screen.get_height() - player.rect.height - ball.rect.height - ball.bounce(diff)
+    
+    
+    deadlocks = pygame.sprite.spritecollide(ball, blocks, True)
+    
+    if len(deadlocks) > 0:
+      ball.bounce(0)
+      
+      if len(blocks) == 0:
+        game_over = True
+    
     allsprites.draw(screen)
     
     pygame.display.flip()
