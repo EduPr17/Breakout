@@ -3,11 +3,11 @@ import pygame
 
 screen_size = 640,480
 
-brick_width = 64
-brick_height = 48
-paddle_width = 64
-paddle_height = 43
-ball_diameter = 18
+brick_width = 60
+brick_height = 15
+paddle_width = 60
+paddle_height = 12
+ball_diameter = 16
 ball_radius = ball_diameter / 2
 
 max_paddle_x = screen_size[0] - paddle_width
@@ -70,7 +70,7 @@ class Breakout:
       pygame.draw.rect(self.screen, brick_color, brick)
   
   def check_input(self):
-    keys = pygame.keys.get_pressed()
+    keys = pygame.key.get_pressed()
     
     if keys[pygame.K_LEFT]:
       self.paddle.left -= 5
@@ -82,9 +82,9 @@ class Breakout:
       if self.paddle.left > max_paddle_x:
         self.paddle.left = max_paddle_x
         
-    if keys[pygame.K_SPACE] and self.sate == state_ball_in_rest:
+    if keys[pygame.K_SPACE] and self.state == state_ball_in_rest:
       self.ball_vel = [5,-5]
-      self.state = state.playing
+      self.state = state_playing
     elif keys[pygame.K_RETURN] and (self.state == state_game_over or self.state == state_won):
       self.init_game()
   
@@ -108,7 +108,7 @@ class Breakout:
       
   def collisions(self):
     for brick in self.bricks:
-      if self.bricks.colliderect(brick):
+      if self.ball.colliderect(brick):
         self.score += 3
         self.ball_vel[1] = -self.ball_vel[1]
         self.bricks.remove(brick)
@@ -148,7 +148,7 @@ class Breakout:
       
       self.clock.tick(50)
       self.screen.fill(black)
-      self.check.input()
+      self.check_input()
       
       if self.state == state_playing:
         self.move_ball()
