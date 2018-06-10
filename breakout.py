@@ -59,7 +59,7 @@ class Breakout:
     y_ofs = 35
     self.bricks = []
     for i in range(7):
-      x_ofs = 35
+      x_ofs
       for e in range(8):
         self.bricks.append(pygame.Rect(x_ofs,y_ofs,brick_width,brick_height)
         x_ofs += brick_width + 10
