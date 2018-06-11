@@ -127,7 +127,7 @@ class Breakout:
         else: 
           self.state = state_game_over
           
-  def stats(self):
+  def show_stats(self):
     if self.font:
       font_surface = self.font.render("POINTS: " + str(self.score) + "TRIES LEFT: " + str(self.tries), False, white)
       self.screen.blit(font_surface, (205,5))
@@ -168,7 +168,7 @@ class Breakout:
       
       pygame.draw.circle(self.screen, green, (self.ball.left + ball_radius, self.ball.top + ball_radius), ball_radius)
       
-      self.stats()
+      self.show_stats()
       
       pygame.display.flip()
 
